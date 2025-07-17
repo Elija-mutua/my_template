@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSphere Technologies</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #f5f5dc; /* Better shade than 'khaki' */
+            line-height: 1.6rem;
+        }
+
+        header {
+            padding: 2rem;
+            background-color: teal;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 1.6rem;
+            word-spacing: normal;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.8rem;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: whitesmoke;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #556b7d;
+            transition: all 0.2s ease-in-out;
+            font-size: 1.3rem;
+        }
+
+        nav ul li a:hover {
+            background-color: lightgray;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        nav ul li a:active {
+            background-color: aqua;
+        }
+
+        .hero {
+            color: white;
+            background: url('https://th.bing.com/th/id/OIP.QKmwqOoK9iH2AEocRJnEXAHaEK?w=317&h=180&c=7&r=0&o=5&pid=1.7') center/cover no-repeat;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .hero h2 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero button {
+            background-color: cornflowerblue;
+            padding: 0.8rem 1.4rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.2s ease-in;
+        }
+
+        .hero button:hover {
+            background-color: mediumseagreen;
+        }
+
+        section {
+            max-width: 800px;
+            background-color: wheat;
+            padding: 1.6rem;
+            border-radius: 8px;
+            margin: 2rem auto;
+            box-shadow: 2px 3px 10px rgba(23, 222, 44, 0.4);
+            transition: all 0.3s ease-in;
+        }
+
+        section:hover {
+            transform: scale(1.006);
+        }
+
+        h2 {
+            color: teal;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: square inside;
+            padding-left: 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            margin: 8px;
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-size: 14px;
+            border: 1.5px solid cornflowerblue;
+            color: black;
+            background-color: whitesmoke;
+            transition: all 0.2s ease-in;
+        }
+
+        input:hover, textarea:hover {
+            border: 2px solid mediumseagreen;
+        }
+
+        button[type="submit"] {
+            background-color: cornflowerblue;
+            padding: 0.8rem 1.4rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.2s ease-in;
+        }
+
+        button[type="submit"]:hover {
+            background-color: mediumseagreen;
+        }
+
+        footer {
+            background-color: cornflowerblue;
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery div {
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>DevSphere Technologies</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portifolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Welcome to DevSphere Technologies</h2>
+        <p>Our goal is to enable every thriving tech enthusiast to feel catered for, motivated, and walk together in this journey of AI revolution.</p>
+        <button onclick="alert('Thanks for showing interest!')">Visit Us</button>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are the top existing tech company in the region, having impacted many thriving tech individuals and collaborated with multiple tech industries.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We got you covered on these:</p>
+        <ul>
+            <li>Web Development</li>
+            <li>App Development</li>
+            <li>SEO</li>
+            <li>Graphic Design</li>
+        </ul>
+    </section>
+
+    <section id="portifolio">
+        <h2>Our Portfolio</h2>
+        <p>This is our portfolio</p>
+        <div class="gallery">
+            <div>
+                <img src="https://th.bing.com/th/id/OIP.9GlErTqT1NDWvSE4IRQKBwHaE8?rs=1&pid=ImgDetMain" alt="webdev">
+                <p>Web Development</p>
+            </div>
+            <div>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.MSqXhmS7QIOEFqhkAtjQogHaEE?rs=1&pid=ImgDetMain" alt="SEO">
+                <p>SEO</p>
+            </div>
+            <div>
+                <img src="https://th.bing.com/th/id/OIP.QKmwqOoK9iH2AEocRJnEXAHaEK?w=317&h=180&c=7&r=0&o=5&pid=1.7" alt="Graphic Design">
+                <p>Graphic Design</p>
+            </div>
+            <div>
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/004/607/890/small_2x/mobile-application-development-gradient-background-free-vector.jpg" alt="App Development">
+                <p>App Development</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Our Blog</h2>
+        <p>See our blog.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Feel free to share your experience, complaints, or motivation with us.</p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 DevSphere Technologies. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert(`Thanks ${name}, your message has been received!`);
+                this.reset();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    </script>
+</body>
+</html>

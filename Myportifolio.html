@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMM</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #888;
+            line-height: 1.2rem;
+        }
+
+        header {
+            padding: 2rem;
+            background-color: green;
+        }
+
+        nav {
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            margin: auto;
+        }
+
+        nav h1 {
+            font-size: 2.4rem;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: black;
+            background-color: cadetblue;
+            padding: 0.46rem;
+            font-size: 1.4rem;
+            border: 1px solid yellow;
+            transition: all 0.2s ease;
+            border-radius: 18px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            background-color: turquoise;
+            transform: scale(1.022);
+            box-shadow: 3px -6px 6px black;
+        }
+
+        /* Dropdown hidden by default */
+        .drop {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: green;
+            padding: 0.5rem;
+            border-radius: 10px;
+            z-index: 1;
+            flex-direction: column;
+        }
+
+        /* Show on hover */
+        nav ul li:hover .drop {
+            display: flex;
+        }
+
+        .drop a {
+            font-size: 1rem;
+            margin: 0.2rem 0;
+        }
+
+        section{
+            max-width: 900px;
+            border-radius: 10px;
+            margin: 2rem auto;
+            padding: 1.7rem;
+        }
+
+        section h2{
+            color: green;
+            font-size: 2rem;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Elijah The Great</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li>
+                    <a href="#services">Services</a>
+                    <div class="drop">
+                        <a href="#services">Web Design</a>
+                        <a href="#services">Web Development</a>
+                        <a href="#services">Data Analytics</a>
+                        <a href="#services">Data Annotation</a>
+                        <a href="#services">Data Entry</a>
+                    </div>
+                </li>
+                <li><a href="#portifolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="blog">
+        <h2>Our Blog</h2>
+        <article>
+            <p>Read this</p>
+            <p>this one explains more about the journey that I have had as i was growing in the field of tech.</p>
+            <small>This article was uploaded to the system on 07/07/2025</small>
+        </article>
+    </section>
+</body>
+</html>

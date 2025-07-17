@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #444;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0;
+}
+
+.calculator{
+    background-color: black;
+    max-width: 500px; 
+    border-radius: 20px;
+    padding: 20px;
+    
+    
+}
+
+.display{
+    text-align: left;
+    padding: 20px ;
+    background-color: #333;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    align-self: center;
+    color: white;
+    font-size: 25px;
+
+}
+
+.history{
+    padding: 30px;
+    background-color: #222;
+    border: none;
+    align-self: center;
+    margin: 8px;
+    color: goldenrod;
+    
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 25px;
+}
+
+button{
+    background-color: #555;
+    padding: 20px;
+    border: 1px solid hsl(0, 0%, 28%);
+    box-shadow: 2px 2px 2px hsl(233, 20%, 55%);
+    border-radius: 25px;
+    transition: 1ms ease-in;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+button:hover{
+    color: black;
+    background-color: #666;
+}
+
+button:active{
+    background-color: #777;
+    border: 3px blue;
+    
+}
+
+.clear{
+    background-color: coral;
+}
+
+.clear:hover{
+    background-color: darkgoldenrod;
+}
+
+.clear:active{
+    background-color: darksalmon;
+    border: 3px blue;
+}
+
+.delete{
+    background-color: dodgerblue;
+}
+
+.operator{
+    background-color: green;
+}
+
+.operator:hover{
+    background-color: chartreuse;
+}
+
+.operator:active{
+    background-color: greenyellow;
+    border: 3px blue;
+}

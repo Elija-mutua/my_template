@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #111;
+            height: 100vh;
+            justify-content: center;align-items: center;
+            display: flex;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+
+        }
+
+        .calculator{
+            max-width: 500px;
+            background-color: #333;
+            border-radius: 20px;
+            padding: 20px;
+            border: 2px solid #777;
+            
+        }
+
+        .display{
+            background-color: #444;
+            border-radius: 12px;
+            border: 1px skyblue;
+            text-align: left;
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            border: 2px solid #777;
+            align-self: center;
+
+        }
+
+        .history{
+            padding: 20px;
+            background-color: #555;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 3px solid #777;
+            padding: 20px;
+            font-size: 20px;
+            width: 100%;
+            align-self: center;
+            color: olive;
+            border-radius: 12px;
+
+        }
+
+        .keys{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        button{
+            border-radius: 50px;
+            padding: 12px;
+            background-color: rgba(20, 54, 233, 0.365);
+            border: 2px solid #111;
+            box-shadow: 2px 2px 2px hsla(110, 100%, 50%, 0.4);
+            color: whitesmoke;
+            font-size: 25px;
+            font-weight: bold;
+            transition: 0.3ms ease;
+
+        }
+
+        button:hover{
+            background-color: rgba(20, 5, 235, 0.3);
+            color: black;
+            transform: scaleX(1.05);
+        }
+
+        button:active{
+            background-color: rgba(20, 5, 235, 0.3);
+             border: 1px solid blue;
+        }
+
+        .clear{
+            background-color: green;
+            box-shadow: 2px 2px 2px rgba(244, 2, 4, 0.4);
+        }
+
+        .clear:hover{
+            background-color: chartreuse;
+             
+        }
+
+        .clear:active{
+            background-color: greenyellow;
+            border: 1px solid blue;
+        }
+
+        .delete{
+            background-color: orangered;
+        }
+
+        .delete:active{
+            background-color: crimson;
+            border: 1px solid blue;
+        }
+
+        .delete:hover{
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="display" class="display">0</div>
+        <div class="history" id="history"></div>
+
+        <div class="keys">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="delete" onclick="deleteLast()">DEL</button>
+            <button onclick="appendToDisplay('(')">(</button>
+            <button onclick="appendToDisplay(')')">)</button>
+
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="appendToDisplay('%')">%</button>
+            <button onclick="appendToDisplay('*')">*</button>
+
+            <button class="equalBtn" onclick="calculate()">=</button>
+            
+
+            <script>
+                const display = document.getElementById('display');
+                const history = document.getElementById('history');
+
+                function appendToDisplay(value){
+                    if (display.textContent === "0" || display.textContent === "Error"){
+                        display.textContent= value;
+                    }
+                    else{
+                        display.textContent += value;
+                    }
+                }
+
+                // to clear the entire written content 
+                function clearDisplay(){
+                    display.textContent = "0";
+                    history.textContent = "";
+                }
+
+                // delete the last element
+                function deleteLast(){
+                    let current = display.textContent;
+
+                    if (current ==="Error"){
+                        current === "0";
+                    }
+                    else if(current.length >=1){
+                        display.textContent = current.slice(0, -1);
+                    }
+                }
+
+                // to calculate the given task
+                function calculate(){
+                    try{
+                    const expression = display.textContent;
+                    const result  = eval(expression);
+                    display.textContent = result;
+
+                    history.textContent = expression + "=" + result;
+
+                    }
+                    catch(error){
+                        display.textContent = "Error"
+                    }
+
+                }
+            </script>
+
+
+        </div>
+    </div>
+</body>
+</html>
