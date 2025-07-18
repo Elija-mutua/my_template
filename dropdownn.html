@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop-down nav bar</title>
+
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar{
+            padding: 16px 20px;
+            background-color: darkgreen;
+        }
+
+        .navbar ul{
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar li{
+            position: relative;
+        }
+
+        .navbar a{
+            background-color: green;
+            display: block;
+            color: white;
+            text-decoration: solid;
+            padding: 10px 15px;
+            transition: 0.3ms ease-in-out;
+            margin: 20px;
+            border-radius: 20px;
+        }
+
+        .navbar a:hover{
+            background-color: greenyellow;
+            transform: scale(1.1);
+            color: black;
+        }
+
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            z-index: 1;
+            min-width: 180px;
+            background-color: darkgreen;
+            border-radius: 20px;
+        }
+
+        .dropdown-content a{
+            padding: 13px 16px;
+        }
+
+        .navbar li:hover .dropdown-content{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+
+            <li><a href="#">Home</a></li>
+
+            <li>
+                <a href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Massage</a>
+                    <a href="#">Cure</a>
+                    <a href="#">Building</a>
+                    <a href="#">Hiking</a>
+                    <a href="#">Counselling</a>
+                </div>
+            </li>
+
+            <li>
+                <a href="#">About</a>
+                <div class="dropdown-content">
+                    <a href="#">Location</a>
+                    <a href="#">City</a>
+                    <a href="#">Posters</a>
+                    <a href="#">Activities</a>
+                    <a href="#">Movies</a>
+                </div>
+            </li>
+
+            <li>
+                <a href="#">Contact</a>
+                <div class="dropdown-content">
+                    <a href="#">Email</a>
+                    <a href="#">Phone</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Google</a>
+                </div>
+            </li>
+
+            <li>
+                <a href="#">Comment</a>
+                <div class="dropdown-content">
+                    <a href="#">Bad</a>
+                    <a href="#">Good</a>
+                    <a href="#">Positive</a>
+                    <a href="#">Negative</a>
+                    <a href="#">Correction</a>
+                </div>
+                
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #eef2f3;
+            margin: 0;
+        }
+
+        .calculator{
+            background: #1c1c1c;
+            border-radius: 20px;
+            box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.3);
+            width: 450px;
+            padding: 20px;
+        }
+
+        .display{
+            background: #000;
+            color: #0f0;
+            font-size: 2.3em;
+            text-align: right;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            min-height: 60px;
+            word-wrap: break-word;
+        }
+
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        button{
+            padding: 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 12px;
+            background-color: #333;
+            color: whitesmoke;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        button:hover{
+            background-color: #444;
+        }
+
+        button.operator{
+            background-color: #ff9500;
+            color: white;
+            font-size: 25px;
+        }
+
+        button.operator:hover{
+            background-color: #e48c00;
+            color: black;
+        }
+
+        button.equal{
+            grid-column: span 2;
+            background-color: #28a745;
+        }
+
+        button.equal:hover{
+            background-color: #1f8c38;
+        }
+
+        button.clear{
+            background-color: #dc3545;
+        }
+
+        button.clear:hover{
+            background-color: #b02a37;
+        }
+
+        button.zero{
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="display" class="display">0</div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('(')">(</button>
+            <button onclick="appendToDisplay(')')">)</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="zero" onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equal" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+
+        function appendToDisplay(value){
+            if (display.textContent === "0"){
+                display.textContent = value;
+            }
+            else {
+                display.textContent += value;
+            }
+        }
+
+        function clearDisplay() {
+            display.textContent = "0";
+        }
+
+        function calculateResult() {
+            try{
+                display.textContent = eval(display.textContent);
+            }
+            catch{
+                display.textContent = "Error"
+            }
+        }
+    </script>
+</body>
+</html>

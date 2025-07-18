@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Drop-down menu bar </title>
+    
+    <style>
+       *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+       }
+
+       body{
+        font-family: 'Cambria', sans-serif;
+       }
+
+       .navbar{
+        padding: 12px 16px;
+        background-color: mediumblue;
+       }
+
+       .navbar ul{
+        list-style: none;
+        display: flex;
+       }
+
+       .navbar li{
+        padding: 12px 16px;
+       }
+
+       .navbar a{
+        font-size: 33px;
+        font-weight: bolder;
+        color: wheat;
+        text-decoration: solid;
+        border-radius: 20px;
+        display: block;
+        padding: 12px 16px;
+       }
+
+       .navbar ul li a i{
+        margin-right: 13px;
+       
+       }
+
+       .navbar a:hover{
+        background-color: cadetblue;
+        color: black;
+       }
+
+       .dropdown{
+        display: none;
+        background-color: royalblue;
+        min-width: 180px;
+        position: absolute;
+        border-radius: 20px;
+        z-index: 1;
+       }
+
+       .dropdown a{
+        padding: 12px 16px;
+       }
+
+       .navbar li:hover .dropdown{
+        display: block;
+       }
+    </style>
+
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="#"><i class="fas fa-home"></i>Home</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fas fa-info-circle"></i>About ▾</a>
+                    <div class="dropdown">
+                        <a href="#">Family</a>
+                        <a href="#">Name</a>
+                        <a href="#">Boss</a>
+                        <a href="#">Where</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fas fa-tools"></i>Services ▾</a>
+                    <div class="dropdown">
+                        <a href="#">Counselling</a>
+                        <a href="#">Tutions</a>
+                        <a href="#">Coaching</a>
+                        <a href="#">Surveys</a>
+                        <a href="#">Massage</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fas fa-phone"></i>Contact ▾</a>
+                    <div class="dropdown">
+                        <a href="#">Phone</a>
+                        <a href="#">Email</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i>Location ▾</a>
+                    <div class="dropdown">
+                        <a href="#">Country</a>
+                        <a href="#">County</a>
+                        <a href="#">City</a>
+                        <a href="#">Border</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>
