@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+        body{
+            background-color: #333;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 100%;
+        }
+        .calculator{
+            border: 3px solid black;
+            padding: 30px;
+            border-radius: 16px;
+            background: transparent;
+            box-shadow: 0px 3px 15px rgba(113, 115, 114, 0.4);
+        }
+
+        input{
+            width: 320px;
+            border: none;
+            border-radius: 15px;
+            padding: 24px;
+            margin: 10px;
+            background:rgba(113, 115, 114, 0.4);
+            box-shadow: 5px 3px 8px rgba(84, 84, 84, 0.5);
+            font-size: 40px;
+            text-align: right;
+            overflow-x: auto;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        input::placeholder{
+            color: #ffffff;
+        }
+
+        button{
+            border: 1px solid black;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            border-radius: 50%;
+            background: transparent;
+            color: #ffffff;
+            font-size: 29px;
+            box-shadow: 0px 3px 8px rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover{
+            background-color: #444;
+            border: 1px solid wheat;
+            color: black;
+        }
+
+        button:active{
+            background-color: #555;
+            border: 5px solid whitesmoke;
+            color: #222;
+        }
+        .equalBtn{
+            background-color: #fb7c14;
+            border-radius: 20px;
+            border: 1px solid greenyellow;
+
+        }
+
+        .equalBtn:hover{
+            background-color: darkgoldenrod;
+        }
+
+        .equalBtn:active{
+            background-color: goldenrod;
+        }
+
+        .operator{
+            color: #6dee0a;
+            background-color: hsl(7, 40%, 50%);
+        }
+
+        .operator:hover{
+            background-color: hsl(7, 40%, 60%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" id="inputBox" placeholder="0" readonly>
+
+            <div>
+                <button class="button operator">AC</button>
+                <button class="button operator">DEL</button>
+                <button class="button operator">%</button>
+                <button class="button operator">/</button>
+            </div>
+
+            <div>
+                <button class="button">7</button>
+                <button class="button">8</button>
+                <button class="button">9</button>
+                <button class="button operator">*</button>
+            </div>
+
+            <div>
+                <button class="button">4</button>
+                <button class="button">5</button>
+                <button class="button">6</button>
+                <button class="button operator">-</button>
+            </div>
+
+            <div>
+                <button class="button">1</button>
+                <button class="button">2</button>
+                <button class="button">3</button>
+                <button class="button operator">+</button>
+            </div>
+
+            <div>
+                <button class="button">00</button>
+                <button class="button">0</button>
+                <button class="button">.</button>
+                <button class="button equalBtn">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let input = document.getElementById('inputBox');
+        let button = document.querySelectorAll('button');
+
+        let string = "";
+        let arr = Array.from(button);
+        arr.forEach(button => {
+            button.addEventListener('click',(e) =>{
+                if(e.target.innerHTML == '='){
+                    string = eval(string);
+                    input.value = string;
+                }
+                else if (e.target.innerHTML == 'AC'){
+                    string = "" ;
+                    input.value = string;
+                }
+                else if (e.target.innerHTML == 'DEL'){
+                    string = string.substring(0, string.length -1);
+                    input.value = string;
+                }
+                else{
+                    string += e.target.innerHTML;
+                    input.value = string;
+                }
+            })
+        })
+    </script>
+</body>
+</html>

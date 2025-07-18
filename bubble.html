@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ripple</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+body {
+ background: #333;
+ display: flex;
+ height: 100vh;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;   
+}
+.ripple{
+background-color: #6b0;
+position: relative;
+height: 100px;
+width: 100px;
+border-radius: 50%;
+animation: ripple 2s infinite;
+margin-right: 100px;
+}
+
+@keyframes ripple {
+0%{transform: scale(0.5); opacity: 1;}
+25%{border-radius: 25px;}
+40%{border-radius: 50%;}
+55%{border-radius: 25px;}
+100%{transform: scale(2); opacity: 0;}}
+</style>
+  </head>
+  <body>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+  </body>
+</html>

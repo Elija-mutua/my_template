@@ -1,101 +1,106 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Simmple_calculator</title>
     <style>
-        *{
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        body{
-            display: flex;
-            align-items: center;
+        body {
+            background-color: #333c33;
+            height: 100vh;
             justify-content: center;
-            min-height: 100vh;
-            background: #eef2f3;
+            align-items: center;
+            display: flex;
             margin: 0;
         }
 
-        .calculator{
-            background: #1c1c1c;
-            border-radius: 20px;
-            box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.3);
-            width: 450px;
+        #calculator {
+            background-color: black;
+            font-family: 'courier', sans-serif;
+            border-radius: 15px;
+            max-width: 500px;
             padding: 20px;
         }
 
-        .display{
-            background: #000;
-            color: #0f0;
-            font-size: 2.3em;
-            text-align: right;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            min-height: 60px;
-            word-wrap: break-word;
+        #display {
+            width: 100%;
+            
+            background-color: #222c22;
+            color: white;
+            text-align: left;
+            font-size: 5rem;
+            border: none;
+            border-radius: 15px;
         }
 
-        .buttons{
+        #keys {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: 10px;
+            padding: 25px;
         }
 
-        button{
-            padding: 20px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 12px;
-            background-color: #333;
-            color: whitesmoke;
+        button {
+            background-color: #555;
+            color: white;
+            border-radius: 50px;
             cursor: pointer;
-            transition: 0.2s ease;
+            border: none;
+            font-size: 3rem;
+            font-weight: bold;
         }
 
-        button:hover{
+        button:hover {
+            background-color: #666;
+        }
+
+        button:active {
             background-color: #444;
         }
 
-        button.operator{
-            background-color: #ff9500;
-            color: white;
-            font-size: 25px;
+        .operator{
+            background-color: hsl(35, 100%, 55%);
         }
 
-        button.operator:hover{
-            background-color: #e48c00;
+        .operator:hover{
+            background-color: hsl(35, 100%, 60%);
+        }
+        .operator:active{
+            background-color: hsl(35, 100%, 75%);
+        }
+
+        .clear{
+            background-color: green;
+            transition: 2ms ease;
+        }
+        .clear:hover{
+            background-color: greenyellow;
+            color: blue;
+            transform: scale(1.05);
+        }
+
+        .clear:active{
+            background-color: chartreuse;
+        }
+
+        .equal{
+            background-color: springgreen;
+            transition: 2ms ease-in-out;
+        }
+        .equal:hover{
+            background-color: deepskyblue;
             color: black;
+            transform: scale(1.05);
         }
-
-        button.equal{
-            grid-column: span 2;
-            background-color: #28a745;
-        }
-
-        button.equal:hover{
-            background-color: #1f8c38;
-        }
-
-        button.clear{
-            background-color: #dc3545;
-        }
-
-        button.clear:hover{
-            background-color: #b02a37;
-        }
-
-        button.zero{
-            grid-column: span 2;
+        .equal:active{
+            background-color: beige;
         }
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <div id="display" class="display">0</div>
-        <div class="buttons">
+    <div id="calculator">
+        <input id="display" readonly>
+        <div id="keys">
             <button class="clear" onclick="clearDisplay()">C</button>
             <button onclick="appendToDisplay('(')">(</button>
             <button onclick="appendToDisplay(')')">)</button>
@@ -107,40 +112,37 @@
             <button onclick="appendToDisplay('4')">4</button>
             <button onclick="appendToDisplay('5')">5</button>
             <button onclick="appendToDisplay('6')">6</button>
-            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
             <button onclick="appendToDisplay('1')">1</button>
             <button onclick="appendToDisplay('2')">2</button>
             <button onclick="appendToDisplay('3')">3</button>
-            <button class="operator" onclick="appendToDisplay('+')">+</button>
-            <button class="zero" onclick="appendToDisplay('0')">0</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
             <button onclick="appendToDisplay('.')">.</button>
-            <button class="equal" onclick="calculateResult()">=</button>
+            <button class="equal" onclick="calculate()">=</button>
         </div>
     </div>
+
     <script>
-        const display = document.getElementById('display');
+        const display = document.getElementById("display");
 
-        function appendToDisplay(value){
-            if (display.textContent === "0"){
-                display.textContent = value;
-            }
-            else {
-                display.textContent += value;
-            }
+        function appendToDisplay(input){
+            display.value += input;
+        }
+        
+        function clearDisplay(){
+            display.value = "";
         }
 
-        function clearDisplay() {
-            display.textContent = "0";
-        }
-
-        function calculateResult() {
+        function calculate(){
             try{
-                display.textContent = eval(display.textContent);
+                display.value = eval(display.value);
             }
-            catch{
-                display.textContent = "Error"
+            catch(error){
+                display.value = "Error";
             }
+            
         }
+        
     </script>
 </body>
 </html>
