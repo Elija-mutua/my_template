@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMM</title>
+    <title>EMM - Elijah The Great</title>
 
     <style>
         * {
@@ -14,8 +14,9 @@
         }
 
         body {
-            background-color: #888;
-            line-height: 1.2rem;
+            background-color: #f2f2f2;
+            color: #333;
+            line-height: 1.6;
         }
 
         header {
@@ -28,6 +29,7 @@
             align-items: center;
             display: flex;
             margin: auto;
+            flex-wrap: wrap;
         }
 
         nav h1 {
@@ -38,6 +40,7 @@
         nav ul {
             list-style: none;
             display: flex;
+            flex-wrap: wrap;
         }
 
         nav ul li {
@@ -48,8 +51,8 @@
         nav ul li a {
             color: black;
             background-color: cadetblue;
-            padding: 0.46rem;
-            font-size: 1.4rem;
+            padding: 0.46rem 0.8rem;
+            font-size: 1.2rem;
             border: 1px solid yellow;
             transition: all 0.2s ease;
             border-radius: 18px;
@@ -59,11 +62,10 @@
 
         nav ul li a:hover {
             background-color: turquoise;
-            transform: scale(1.022);
+            transform: scale(1.05);
             box-shadow: 3px -6px 6px black;
         }
 
-        /* Dropdown hidden by default */
         .drop {
             display: none;
             position: absolute;
@@ -76,28 +78,57 @@
             flex-direction: column;
         }
 
-        /* Show on hover */
         nav ul li:hover .drop {
             display: flex;
         }
 
         .drop a {
             font-size: 1rem;
+            color: white;
             margin: 0.2rem 0;
         }
 
-        section{
+        section {
             max-width: 900px;
+            background: white;
             border-radius: 10px;
             margin: 2rem auto;
-            padding: 1.7rem;
+            padding: 2rem;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
 
-        section h2{
+        section h2 {
             color: green;
             font-size: 2rem;
             font-weight: bold;
-            
+            margin-bottom: 1rem;
+        }
+
+        article {
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #444;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: green;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 1rem;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: darkgreen;
         }
     </style>
 </head>
@@ -118,19 +149,62 @@
                         <a href="#services">Data Entry</a>
                     </div>
                 </li>
-                <li><a href="#portifolio">Portfolio</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#blog">Blog</a></li>
             </ul>
         </nav>
     </header>
 
+    <section id="home">
+        <h2>Welcome to My Digital World</h2>
+        <p>I'm Elijah, a passionate web developer, data analyst, and tech enthusiast with a focus on creating impactful digital experiences. Whether you're a business owner, startup founder, or just exploring the digital space—you're in the right place!</p>
+        <a class="btn" href="#about">Learn More</a>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>My name is Elijah, a civil engineering student with a solid background in technology. Over the years, I've acquired skills in web development, design, data analytics, and online freelancing. I believe in continuous learning and using technology to solve real-world problems.</p>
+        <p>I'm currently working on integrating my engineering knowledge with programming to build smart, data-driven systems for infrastructure and business applications.</p>
+    </section>
+
+    <section id="services">
+        <h2>What I Offer</h2>
+        <ul>
+            <li><strong>Web Design:</strong> Clean, responsive, and visually appealing interfaces tailored to client needs.</li>
+            <li><strong>Web Development:</strong> Full-stack solutions with modern technologies like HTML, CSS, JavaScript, and Python (Flask/Django).</li>
+            <li><strong>Data Analytics:</strong> Transform raw data into insights using tools like Excel, Python, and SQL.</li>
+            <li><strong>Data Annotation:</strong> Labeling and preparing datasets for machine learning and AI training.</li>
+            <li><strong>Data Entry:</strong> Reliable and accurate data input for business, research, and academic work.</li>
+        </ul>
+    </section>
+
+    <section id="portfolio">
+        <h2>My Portfolio</h2>
+        <p>Here's a snapshot of some of the projects I've worked on:</p>
+        <ul>
+            <li><strong>Personal Portfolio Website:</strong> A fully responsive website built using HTML, CSS, and JavaScript showcasing my skills and services.</li>
+            <li><strong>Survey Data Dashboard:</strong> A data visualization tool for analyzing field data using Python and Plotly.</li>
+            <li><strong>Student Results System:</strong> An interactive web app built with Flask for managing school exam results.</li>
+        </ul>
+        <a class="btn" href="#contact">Contact Me</a>
+    </section>
+
     <section id="blog">
         <h2>Our Blog</h2>
         <article>
-            <p>Read this</p>
-            <p>this one explains more about the journey that I have had as i was growing in the field of tech.</p>
-            <small>This article was uploaded to the system on 07/07/2025</small>
+            <h3>My Tech Journey</h3>
+            <p>This article explains the journey I’ve had from being a student with no coding background to developing full-fledged websites and systems. It shares the struggles, the breakthroughs, and the lessons learned along the way.</p>
+            <small>Posted on: 07/07/2025</small>
+        </article>
+        <article>
+            <h3>Why Every Engineer Should Learn to Code</h3>
+            <p>As the world shifts to data-driven decisions, engineers can no longer rely only on manual tools. This blog explores how coding has enhanced my civil engineering skills and why it’s a must-have skill for all professionals.</p>
+            <small>Posted on: 12/07/2025</small>
         </article>
     </section>
+
+    <footer>
+        &copy; 2025 Elijah The Great. All rights reserved.
+    </footer>
 </body>
 </html>
